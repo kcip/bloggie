@@ -17,8 +17,6 @@
 - [Code Issues & Resolutions](#code-issues--resolutions)
 
 <br>
-![Alt Text](https://lh3.googleusercontent.com/proxy/ljKZbFgeBH2N-bISVL9iFI8S9FK8rMkgl6w5968RrRjWx9y2VsI84k8m4edbMKdDH_5DFlCCFppRrMjWcaQIJFdatxuu8NlnZH4Pz1MleQ)
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
 
 ## Overview
 
