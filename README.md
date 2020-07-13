@@ -20,7 +20,7 @@
 
 ## Overview
 
-_**bloggie** is a Full CRUD blog app with user posts, comments & likes with a Ruby on Rails backend and React front end._
+_**bloggie** is a Full CRUD blog app with user posts, comments & likes with a Ruby on Rails Back-End and React Front-End._
 
 <br>
 
@@ -32,16 +32,14 @@ _**bloggie** will have user(s), posts, comments & likes. In addition to popular/
 
 ### Goals
 
-- _Backend with Ruby on Rails,_
-- _Front end with React.js._
+- _Back-End with Ruby on Rails,_
+- _Front-End with React.js._
 - _Mobile responsive with 3 breakpoints ( mobile, tablet, desktop )._
 - _Styling with SCSS._
 
 <br>
 
 ### Libraries and Dependencies
-
-> Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
@@ -56,14 +54,12 @@ _**bloggie** will have user(s), posts, comments & likes. In addition to popular/
 
 #### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
-
 - Desktop Landing
 
-![https://www.figma.com/file/I4le3VzoenJYmhotAVIehd/Blog?node-id=0%3A1](url)
+[https://www.figma.com/file/I4le3VzoenJYmhotAVIehd/Blog?node-id=0%3A1](url)
 
 #### Component Tree
-![https://www.figma.com/file/qAlWnLcSmtjroEFfKTTCsd/React-Components](url)
+[https://www.figma.com/file/qAlWnLcSmtjroEFfKTTCsd/React-Components](url)
 
 #### Component Hierarchy
 
@@ -95,8 +91,6 @@ src
 
 #### Component Breakdown
 
-> Use this section to go into further depth regarding your components, including breaking down the components as stateless or stateful, and considering the passing of data between those components.
-
 |  Component   |    Type    | state | props | Description                                                      |
 | :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
 |    Header    | functional |   n   |   y   | _The header will contain the navigation & logo._               |
@@ -126,8 +120,8 @@ src
 | Connecting Ruby & React CRUD Actions |    H     |     4 hrs      |     tbd hrs     |     TBD     |
 | Posts |    H     |     3 hrs      |     tbd hrs     |     TBD     |
 | Post |    H     |     3 hrs      |     tbd hrs     |     TBD     |
-| SASS Styling |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| SASS Styling |    H     |     3 hrs      |     tbd hrs     |     TBD     |
+| TOTAL               |          |     tbd hrs      |     tbd hrs     |     TBD     |
 
 
 <br>
