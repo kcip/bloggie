@@ -132,7 +132,7 @@ src
 
 >ERD Model draw.io
 
-[https://drive.google.com/file/d/1AP06QmD-ukAdcnkvFWA1S4erhdoZJt1C/view?usp=sharing] (url)
+https://drive.google.com/file/d/1AP06QmD-ukAdcnkvFWA1S4erhdoZJt1C/view?usp=sharing (url)
 <br>
 
 ***
