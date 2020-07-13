@@ -1,9 +1,4 @@
-# bloggie
-# PROJECT 4 README <!-- omit in toc -->
-
-> The Project Planning section **should be completed** for your project pitch with instructors.
->
-> To ensure correct Markdown, copy and paste the raw template code into your project repo README file. Remove ALL template instructions and replace with your project details.
+# bloggie README <!-- omit in toc -->
 
 - [Overview](#overview)
 - [MVP](#mvp)
@@ -25,26 +20,22 @@
 
 ## Overview
 
-_**Project Title** is lorem ipsum dolor sit amet. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
-
+_**bloggie** is a Full CRUD blog app with user posts, comments & likes with a Ruby on Rails backend and React front end._
 
 <br>
 
 ## MVP
 
-> The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
-
-_The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+_**bloggie** will have user(s), posts, comments & likes. In addition to popular/ recent posts,  bloggie will also have archived posts._
 
 <br>
 
 ### Goals
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- _Backend with Ruby on Rails,_
+- _Front end with React.js._
+- _Mobile responsive with 3 breakpoints ( mobile, tablet, desktop )._
+- _Styling with SCSS._
 
 <br>
 
@@ -54,11 +45,10 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|      React       | _Frontend clinet._ |
+|   React Router   | _Handles frontend routing._ |
+| Ruby on Rails | _Handles backend database, and api data._ |
+|     Axios      | _Handles API calls between frontend and backend._ |
 
 <br>
 
@@ -68,37 +58,14 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 > Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
 
-![Dummy Link](url)
-
 - Desktop Landing
 
-![Dummy Link](url)
-
-- Desktop Hero
-
-![Dummy Link](url)
-
-- Resource Index
-
-![Dummy Link](url)
-
-- Resource Show
-
-![Dummy Link](url)
-
-- Tablet Resource Index
-
-![Dummy Link](url)
-
-- Mobile Resource Index
+![https://www.figma.com/file/I4le3VzoenJYmhotAVIehd/Blog?node-id=0%3A1](url)
 
 #### Component Tree
-
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. 
+![https://www.figma.com/file/qAlWnLcSmtjroEFfKTTCsd/React-Components](url)
 
 #### Component Hierarchy
-
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like. 
 
 ``` structure
 
@@ -107,9 +74,21 @@ src
       |__ fonts
       |__ graphics
       |__ images
-      |__ mockups
+|__ App
 |__ components/
+      |__ Main.jsx
       |__ Header.jsx
+      |__ Nav.jsx
+      |__ Footer.jsx
+      |__ All Posts.jsx
+      |__ Post.jsx
+      |__ Create Post.jsx
+      |__ Edit Post.jsx
+      |__ Comments.jsx
+      |__ Likes.jsx
+      |__ Sign in.jsx
+      |__ Sign up.jsx
+      |__ User Profile.jsx
 |__ services/
 
 ```
@@ -120,10 +99,15 @@ src
 
 |  Component   |    Type    | state | props | Description                                                      |
 | :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
-|    Header    | functional |   n   |   n   | _The header will contain the navigation and logo._               |
-|  Navigation  | functional |   n   |   n   | _The navigation will provide a link to each of the pages._       |
-|   Gallery    |   class    |   y   |   n   | _The gallery will render the posts using cards in flexbox._      |
-| Gallery Card | functional |   n   |   y   | _The cards will render the post info via props._                 |
+|    Header    | functional |   n   |   y   | _The header will contain the navigation & logo._               |
+|  Navigation  | functional |   n   |   y   | _The navigation will provide a link to each of the pages & signup/signin._       |
+|   Main    |   functional    |   y   |   n   | _The Main will be the main componet with state._      |
+|    Posts    | functional |   n   |   y   | _Posts will show all User posts._ |
+| Post | functional |   n   |   y   | _The Post will render the post info via props._                 |
+|    Edit Post    | functional |   n   |   y   | _Edit Post will hande CRUD for updating/deleting posts._ |
+|    Create Post    | functional |   n   |   y   | _Create Post will handle initial CRUD._ |
+|    Sign in    | functional |   n   |   y   | _Handles user signin funcionality._ |
+|    Sign up    | functional |   n   |   y   | _Handles user signup funcionality._ |
 |    Footer    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
 
 #### Time Estimates
@@ -132,11 +116,19 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| Rails Models, Controllers, Routes   |    H     |     4 hrs      |     tbd hrs     |    tbd hrs    |
+| Create CRUD Actions |    H     |     5 hrs      |     tbd hrs     |     TBD     |
+| User Auth |    H     |     2 hrs      |     tbd hrs     |     TBD     |
+| testing CRUD Routes |    H     |     2 hrs      |     tbd hrs     |     TBD     |
+| Initial React Component Layout |    H     |     3 hrs      |     tbd hrs     |     TBD     |
+| React Routing |    H     |     3 hrs      |     tbd hrs     |     TBD     |
+| React Components |    H     |     5 hrs      |     tbd hrs     |     TBD     |
+| Connecting Ruby & React CRUD Actions |    H     |     4 hrs      |     tbd hrs     |     TBD     |
+| Posts |    H     |     3 hrs      |     tbd hrs     |     TBD     |
+| Post |    H     |     3 hrs      |     tbd hrs     |     TBD     |
+| SASS Styling |    H     |     3 hrs      |     1 hrs     |     TBD     |
 | TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
 
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
 
 <br>
 
@@ -152,14 +144,15 @@ src
 
 ## Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+> Search and filter User(s) & Post(s)
+> Expand Post create/edit features (ie: add images, more control over post styling )
 
 ***
 
 ## Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
+> Use this section to include a brief code snippet of functionality that you are proud of and a brief description -- Coming soon.
 
 ## Code Issues & Resolutions
 
-> Use this section to list of all major issues encountered and their resolution.
+> Use this section to list of all major issues encountered and their resolution -- Coming soon.
