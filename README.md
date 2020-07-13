@@ -34,6 +34,7 @@ _**bloggie** will have user(s), posts, comments & likes. In addition to popular/
 
 ### Goals
 
+- _Full CRUD App._
 - _Back-End with Ruby on Rails,_
 - _Front-End with React.js._
 - _Mobile responsive with 3 breakpoints ( mobile, tablet, desktop )._
