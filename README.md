@@ -17,6 +17,7 @@
 - [Code Issues & Resolutions](#code-issues--resolutions)
 
 <br>
+![](https://lh3.googleusercontent.com/proxy/ljKZbFgeBH2N-bISVL9iFI8S9FK8rMkgl6w5968RrRjWx9y2VsI84k8m4edbMKdDH_5DFlCCFppRrMjWcaQIJFdatxuu8NlnZH4Pz1MleQ)
 
 ## Overview
 
