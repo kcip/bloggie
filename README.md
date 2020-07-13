@@ -54,7 +54,7 @@ _**bloggie** will have user(s), posts, comments & likes. In addition to popular/
 
 #### Wireframes
 
-- Desktop Landing
+- Figma Design
 
 [https://www.figma.com/file/I4le3VzoenJYmhotAVIehd/Blog?node-id=0%3A1](url)
 
@@ -100,9 +100,9 @@ src
 | Post | functional |   n   |   y   | _The Post will render the post info via props._                 |
 |    Edit Post    | functional |   n   |   y   | _Edit Post will hande CRUD for updating/deleting posts._ |
 |    Create Post    | functional |   n   |   y   | _Create Post will handle initial CRUD._ |
-|    Sign in    | functional |   n   |   y   | _Handles user signin funcionality._ |
-|    Sign up    | functional |   n   |   y   | _Handles user signup funcionality._ |
-|    Footer    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
+|    Sign in    | functional |   n   |   y   | _Handles user signin functionality._ |
+|    Sign up    | functional |   n   |   y   | _Handles user signup functionality._ |
+|    Footer    | functional |   n   |   n   | _The footer will show basic info about site._ |
 
 #### Time Estimates
 
