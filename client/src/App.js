@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import { loginUser, registerUser, removeToken, verifyUser } from './services/auth'
+const App = () => {
+ const [currentUser, setCurrentUser] = useState(null);
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+ useEffect(() => {
+
+ }, []);
+
+ handleLogin = async (userData) => {
+  const currentUser = await loginUser(userData);
+  setCurrentUser(currentUser)
+ }
+
+ handleRegister = async (userData) => {
+  const currentUser = await registerUser(userData);
+  setCurrentUser(currentUser)
+ }
+ handleLogout = () => {
+  setCurrentUser(null);
+  localStorage.removeItem('authToken');
+  removeToken();
+  //check this later
+  this.props.history.push('/')
+ }
+
+ handleVerify = async () => {
+  const currentUser = await verifyUser();
+  setCurrentUser(currentUser)
+ }
+
+ return (
+  <div>
+   app here
+  </div>
+ )
 }
-
-export default App;
+export default App
