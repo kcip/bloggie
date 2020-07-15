@@ -14,3 +14,15 @@ html {
 body {
  box-sizing: border-box;
 }
+
+
+//flexbox for sticky footer
+.sticky {
+ display: flex;
+ min-height: 100vh;
+ flex-direction: column;
+}
+//flex 1 set to main wrapper for sticky footer
+.main {
+ flex: 1;
+}

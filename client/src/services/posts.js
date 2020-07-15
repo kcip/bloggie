@@ -5,13 +5,14 @@ export const getAllPosts = async () => {
  return resp.data;
 };
 
-export const getOnePost = async () => {
+export const getOnePost = async (id) => {
  const resp = await api.get(`/posts${id}`);
  return resp.data;
 };
 
 export const postPost = async (postData) => {
- const resp = await api.get(`/posts/${id}`, { post: postData });
+ const resp = await api.post(`/posts`, { post: postData });
+ console.log(resp)
  return resp.data;
 }
 
