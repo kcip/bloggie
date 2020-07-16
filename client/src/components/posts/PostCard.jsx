@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom"
 import './postStyles.scss';
 
 const PostCard = (props) => {
@@ -23,7 +24,7 @@ const PostCard = (props) => {
        <div className="postcontent">
         <p>{shortenText(post.post_content)}</p>
         <div className="postButton">
-         <a href="html/single-blog.html">read more</a>
+         <Link to={`/posts/${post.id}`}>read more</Link>
         </div>
        </div>
       </div>

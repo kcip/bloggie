@@ -11,56 +11,56 @@ const Signup = (props) => {
 
  return (
   <Fragment>
-   Sign up
-   <form className='userForm' onSubmit={(e) => {
-    e.preventDefault()
-    handleRegister({ first_name: firstName, last_name: lastName, email: email, username: username, profile_img_url: userImage, pass: password })
-    // history.push('/')
-   }}>
-    <label>First Name:
+   <div className="form--container">
+    <div className="form--wrapper">
+     Sign up
+   <form className='signinForm' onSubmit={(e) => {
+      e.preventDefault()
+      handleRegister({ first_name: firstName, last_name: lastName, email: email, username: username, profile_img_url: userImage, password: password })
+      // history.push('/')
+     }}>
+      <label>First Name:
      <input
-      type="text"
-      value={firstName}
-      onChange={e => setFirstName(e.target.value)} />
-    </label>
-
-    <label>Last Name:
+        type="text"
+        value={firstName}
+        onChange={e => setFirstName(e.target.value)} />
+      </label>
+      <label>Last Name:
      <input
-      type="text"
-      value={lastName}
-      onChange={e => setLastName(e.target.value)} />
-    </label>
-    <label>Email:
+        type="text"
+        value={lastName}
+        onChange={e => setLastName(e.target.value)} />
+      </label>
+      <label>Email:
      <input
-      type="text"
-      value={email}
-      onChange={e => setEmail(e.target.value)} />
-    </label>
-
-
-
-    <label>Username:
+        type="text"
+        value={email}
+        onChange={e => setEmail(e.target.value)} />
+      </label>
+      <label>Username:
      <input
-      type="text"
-      value={username}
-      onChange={e => setUsername(e.target.value)} />
-    </label>
-
-    <label>Profile Image:
+        type="text"
+        value={username}
+        onChange={e => setUsername(e.target.value)} />
+      </label>
+      <label>Profile Image:
      <input
-      type="text"
-      value={userImage}
-      onChange={e => setUserImage(e.target.value)} />
-    </label>
-
-    <label>Password:
+        type="text"
+        value={userImage}
+        onChange={e => setUserImage(e.target.value)} />
+      </label>
+      <label>Password:
      <input
-      type="text"
-      value={password}
-      onChange={e => setPassword(e.target.value)} />
-    </label>
-    <button>submit</button>
-   </form>
+        type="text"
+        value={password}
+        onChange={e => setPassword(e.target.value)} />
+      </label>
+      <button>submit</button>
+     </form>
+    </div>
+
+   </div>
+
   </Fragment>
  )
 
