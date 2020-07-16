@@ -10,6 +10,7 @@ import Post from './posts/Post';
 import CreatePost from './forms/CreatePost';
 import Signin from './forms/Signin';
 import Signup from './forms/Signup';
+import EditPost from './forms/EditPost';
 const Main = (props) => {
  const [post, setPost] = useState({})
 
@@ -18,6 +19,7 @@ const Main = (props) => {
 
  useEffect(() => {
   fetchPosts()
+  handleVerify()
  }, [])
 
  const fetchPosts = async () => {
@@ -30,6 +32,23 @@ const Main = (props) => {
   console.log(postData)
   setPost(prevPost => prevPost.posts, newPost)
  }
+
+ const handlePostUpdate = async (id, postData) => {
+  const newPost = await putPost(id, postData);
+  setPost(prevPost => ({
+   posts: prevPost.posts.map(post => post.id === parseInt(id) ? newPost : post)
+  }))
+ }
+
+
+ const handlePostDelete = async (id) => {
+  await deletePost(id);
+  setPost(prevPost => ({
+   posts: prevPost.posts.map(post => post.id === parseInt(id))
+  }))
+ }
+
+
 
 
 
@@ -51,10 +70,10 @@ const Main = (props) => {
   props.history.push('/')
  }
 
- // const handleVerify = async () => {
- //  const currentUser = await verifyUser();
- //  setCurrentUser(currentUser)
- // }
+ const handleVerify = async () => {
+  const currentUser = await verifyUser();
+  setCurrentUser(currentUser)
+ }
 
 
 
@@ -63,29 +82,61 @@ const Main = (props) => {
   <Fragment>
    <Header data={props.currentUser}
     currentUser={currentUser}
-   // handleLogout={handleLogout}
+    handleLogout={handleLogout}
    />
    <div className="main">
+    <Switch>
 
-    <Route path="/auth/login" exact render={(props) => <Signin data={props} handleLogin={handleLogin} />} />
-    <Route path="/register" exact render={() => <Signup handleRegister={handleRegister} />} />
-    <Route path="/" exact render={() => <PostCard data={post} />} />
-    <Route path="/" exact render={() => <Posts data={post} />} />
+     <Route path="/auth/login" exact render={(props) => <Signin data={props} handleLogin={handleLogin} />} />
+     <Route path="/register" exact render={() => <Signup handleRegister={handleRegister} />} />
+
+     <Route path="/" exact  >
+      <PostCard data={post} />
+      <Posts data={post} />
+     </Route>
+
+
+
+     {/* <Route path="/" exact render={() => <Posts data={post} />} 
+    /> */}
 
 
 
 
-    <Route path='/posts/new' exact render={(props) => (
-     <CreatePost
-      {...props}
-      handlePostCreate={handlePostCreate}
-     />
-    )} />
+     <Route path='/posts/new' exact render={(props) => (
+      <CreatePost
+       {...props}
+       handlePostCreate={handlePostCreate}
+      />
+     )} />
 
-    <Route exact path="/posts/:id" render={(props) => {
-     const { id } = props.match.params;
-     return <Post id={id} info={props} data={post} />
-    }} />
+     <Route exact path="/posts/:id" render={(props) => {
+      const { id } = props.match.params;
+      return <Post id={id} info={props} data={post}
+
+       handlePostDelete={handlePostDelete} data={post} id={id}
+      />
+     }} />
+
+
+
+     <Route exact path="/posts/:id/edit" render={(props) => {
+      const { id } = props.match.params;
+      return <EditPost id={id} info={props} data={post}
+       handlePostUpdate={handlePostUpdate} data={post} id={id}
+      />
+     }} />
+     {/* <Route path='/posts/:id/edit' render={(props) => {
+      const { id } = props.match.params;
+      const postItem = post.find(post => post.id === parseInt(id));
+      return <EditPost {...props}
+       handlePostUpdate={handlePostUpdate}
+       postItem={postItem}
+       id={id} />
+     }} /> }*/}
+
+    </Switch>
+
 
 
 

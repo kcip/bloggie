@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { getPost } from '../../services/posts'
-
+import { Link } from 'react-router-dom';
 const Post = (props) => {
  const [post, setPost] = useState([]);
  // const data = props.data.posts;
@@ -27,6 +27,14 @@ const Post = (props) => {
    <img src={post_photo} alt={post_title} />
    <p>{post_content}</p>
    <h5>{created_at}</h5>
+
+
+
+   <button onClick={() => props.handlePostDelete(post.id)}>Delete</button>
+   <Link to={`/posts/${post.id}/edit`}><button>Edit</button></Link>
+
+
+
   </div>
  )
 }
