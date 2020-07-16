@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :update, :destroy]
-  before_action :authorize_request, only: :create
+  # before_action :set_post, only: [:show, :update, :destroy]
   # before_action :authorize_request, only: :create
-  # before_action :set_post, only: %i[show update destroy]
-  # before_action :authorize_request, only: %i[create update destroy]
+ 
+  before_action :set_post, only: %i[show update destroy]
+  before_action :authorize_request, only: %i[create update destroy]
   # before_action :login_required, :except=>[:new, :create]
   # GET /posts
   def index
