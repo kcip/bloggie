@@ -1,11 +1,12 @@
 import React, { useEffect, useState, Fragment } from 'react';
-import { Route } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import { loginUser, registerUser, removeToken, verifyUser } from '../services/auth';
 import Header from './shared/Header';
 import Footer from './shared/Footer';
 import { getAllPosts, postPost, putPost, deletePost } from '../services/posts';
 import PostCard from './posts/PostCard';
 import Posts from './posts/Posts';
+import Post from './posts/Post';
 import CreatePost from './forms/CreatePost';
 import Signin from './forms/Signin';
 import Signup from './forms/Signup';
@@ -47,7 +48,7 @@ const Main = (props) => {
   localStorage.removeItem('authToken');
   removeToken();
   //check this later
-  this.props.history.push('/')
+  props.history.push('/')
  }
 
  // const handleVerify = async () => {
@@ -70,15 +71,27 @@ const Main = (props) => {
     <Route path="/register" exact render={() => <Signup handleRegister={handleRegister} />} />
     <Route path="/" exact render={() => <PostCard data={post} />} />
     <Route path="/" exact render={() => <Posts data={post} />} />
-    <Route path='/posts/new' render={(props) => (
+
+
+
+
+    <Route path='/posts/new' exact render={(props) => (
      <CreatePost
       {...props}
       handlePostCreate={handlePostCreate}
      />
     )} />
+
+    <Route exact path="/posts/:id" render={(props) => {
+     const { id } = props.match.params;
+     return <Post id={id} info={props} data={post} />
+    }} />
+
+
+
    </div>
    <Footer />
   </Fragment>
  )
 }
-export default Main;
+export default withRouter(Main);

@@ -18,7 +18,8 @@ const CreatePost = (props) => {
    {/* handleLogin({ username: signIn, password: pass }); */}
    <form onSubmit={(e) => {
     e.preventDefault();
-    handlePostCreate({ name: name, photo: photo, text: text })
+    handlePostCreate({ post_title: name, post_photo: photo, post_content: text })
+    // handlePostCreate({ name: name, photo: photo, text: text })
    }}>
     <label>Post Title:
      <input
