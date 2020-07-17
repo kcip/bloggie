@@ -122,8 +122,10 @@ const Main = (props) => {
 
      <Route exact path="/posts/:id/edit" render={(props) => {
       const { id } = props.match.params;
-      return <EditPost id={id} info={props} data={post}
-       handlePostUpdate={handlePostUpdate} data={post} id={id}
+      //const postItem = post.find(post => post.id === parseInt(id));
+      //console.log(postItem)
+      return <EditPost id={parseInt(id)} info={props}
+       handlePostUpdate={handlePostUpdate} data={post} id={parseInt(id)}
       />
      }} />
      {/* <Route path='/posts/:id/edit' render={(props) => {
