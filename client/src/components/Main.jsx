@@ -22,6 +22,7 @@ const Main = (props) => {
   handleVerify()
  }, [])
 
+ //POST FUNCTIONS
  const fetchPosts = async () => {
   const posts = await getAllPosts();
   setPost({ posts })
@@ -40,7 +41,6 @@ const Main = (props) => {
   }))
  }
 
-
  const handlePostDelete = async (id) => {
   await deletePost(id);
   setPost(prevPost => ({
@@ -48,10 +48,22 @@ const Main = (props) => {
   }))
  }
 
+ //Comments
+ // const handleCommentCreate = async (postData) => {
+ //  const newPost = await postPost(postData);
+ //  console.log(postData)
+ //  setPost(prevPost => prevPost.posts, newPost)
+ // }
 
 
 
 
+
+
+
+
+
+ //AUTH Functions
  const handleLogin = async (userData) => {
   console.log(userData)
   const currentUser = await loginUser(userData);

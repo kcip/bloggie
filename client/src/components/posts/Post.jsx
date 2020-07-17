@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getPost } from '../../services/posts'
 import { Link } from 'react-router-dom';
+import Comments from '../forms/Comments';
 const Post = (props) => {
  const [post, setPost] = useState([]);
  // const data = props.data.posts;
@@ -33,7 +34,7 @@ const Post = (props) => {
    <button onClick={() => props.handlePostDelete(post.id)}>Delete</button>
    <Link to={`/posts/${post.id}/edit`}><button>Edit</button></Link>
 
-
+   <Comments {...props} />
 
   </div>
  )
