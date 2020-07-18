@@ -7,9 +7,17 @@ const Posts = (props) => {
    {posts && posts.map((post, i) => (
     <Link to={`/posts/${post.id}`}>
      <div key={i} className='posts'>
-      <p className="posts--title">{post.post_title}</p>
-      <p className="posts--content">{post.post_content}</p>
-      <img className="posts--image" src={post.post_photo} alt={post.post_title} />
+      <div className="posts__container">
+       <img className="posts--image" src={post.post_photo} alt={post.post_title} />
+      </div>
+      <div className="post__container">
+       <p className="posts--title">{post.post_title}</p>
+      </div>
+      <div className="post__container">
+       <p className="posts--content">{post.post_content}</p>
+      </div>
+
+
      </div>
     </Link>
 

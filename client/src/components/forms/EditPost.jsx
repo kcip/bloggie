@@ -24,7 +24,8 @@ const EditPost = (props) => {
   <div>
    <form onSubmit={(e) => {
     e.preventDefault();
-    handlePostUpdate({ id, post_title: post_title, post_photo: post_photo, post_content: post_content });
+    handlePostUpdate(id, { post_title: post_title, post_photo: post_photo, post_content: post_content });
+
    }}>
     <label>Post Title:
      <input

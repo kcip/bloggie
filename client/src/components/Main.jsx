@@ -4,6 +4,7 @@ import { loginUser, registerUser, removeToken, verifyUser } from '../services/au
 import Header from './shared/Header';
 import Footer from './shared/Footer';
 import { getAllPosts, postPost, putPost, deletePost } from '../services/posts';
+// import { getComments, postComments } from '../services/comments';
 import PostCard from './posts/PostCard';
 import Posts from './posts/Posts';
 import Post from './posts/Post';
@@ -16,12 +17,15 @@ const Main = (props) => {
 
  const [currentUser, setCurrentUser] = useState(null);
 
+ // const [comments, setComments] = useState({})
 
  useEffect(() => {
   fetchPosts()
   handleVerify()
+
  }, [])
 
+ //POST FUNCTIONS
  const fetchPosts = async () => {
   const posts = await getAllPosts();
   setPost({ posts })
@@ -40,7 +44,6 @@ const Main = (props) => {
   }))
  }
 
-
  const handlePostDelete = async (id) => {
   await deletePost(id);
   setPost(prevPost => ({
@@ -48,10 +51,19 @@ const Main = (props) => {
   }))
  }
 
+ // //Comments
+ // const fetchComments = async () => {
+ //  const comments = await getComments();
+ //  setComments(comments)
+ // }
 
+ // const putComments = async (postComment) => {
+ //  const newComment = await postComments(postComment);
+ //  setComments(prevComment => prevComment.comment, newComment)
 
+ // }
 
-
+ //AUTH Functions
  const handleLogin = async (userData) => {
   console.log(userData)
   const currentUser = await loginUser(userData);
@@ -94,14 +106,6 @@ const Main = (props) => {
       <PostCard data={post} />
       <Posts data={post} />
      </Route>
-
-
-
-     {/* <Route path="/" exact render={() => <Posts data={post} />} 
-    /> */}
-
-
-
 
      <Route path='/posts/new' exact render={(props) => (
       <CreatePost
