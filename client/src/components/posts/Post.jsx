@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 // import { getComments, postComments } from '../../services/comments';
 import Comments from '../forms/Comments';
 import ShowComments from './ShowComments';
+// import Comment from './Comment'
 import Likes from './Likes'
 const Post = (props) => {
  const [post, setPost] = useState([]);
@@ -58,7 +59,7 @@ const Post = (props) => {
 
    <Comments {...props} />
    <ShowComments {...props} />
-
+   {/* <Comment {...props} /> */}
 
    {/* <Comments {...props} putComments={postComments} />
    <ShowComments fetchComments={fetchComments} /> */}
