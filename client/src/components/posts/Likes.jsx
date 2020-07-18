@@ -11,7 +11,7 @@ const Likes = (props) => {
  useEffect(() => {
   fetchLikes()
 
- }, [])
+ }, [likes])
 
  const fetchLikes = async () => {
   const resp = await api.get(`/posts/${id}/likes`);

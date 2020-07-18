@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import api from '../../services/api-helper'
 
+//import { postComments } from '../../services/comments';
 const Comments = (props) => {
  const [name, setName] = useState('');
  const [comment, setComment] = useState('');
@@ -12,6 +13,7 @@ const Comments = (props) => {
   console.log(resp)
   return resp.data;
  }
+
 
 
  return (

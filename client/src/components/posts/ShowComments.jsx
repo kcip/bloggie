@@ -9,7 +9,7 @@ const ShowComments = (props) => {
  useEffect(() => {
   fetchComments()
 
- }, [setComments])
+ }, [comments, setComments])
 
 
  const fetchComments = async () => {
@@ -17,6 +17,7 @@ const ShowComments = (props) => {
   const postComments = await getComments(id)
   setComments(postComments)
  }
+
 
 
  return (
