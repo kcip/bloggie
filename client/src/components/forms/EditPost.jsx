@@ -16,9 +16,6 @@ const EditPost = (props) => {
   setPost(postData)
  }
 
-
-
-
  const { post_title, post_content, post_photo } = post
  return (
   <div>

@@ -16,12 +16,22 @@ const Likes = (props) => {
  const fetchLikes = async () => {
   const resp = await api.get(`/posts/${id}/likes`);
   const postLikes = resp.data
-  // setLikes(postLikes)
+  console.log(postLikes)
+  postLikes.filter(like => like.post_id == id).map(filteredLikes => (
+   setLikes(parseInt(filteredLikes.post_id))
+  ))
  }
 
+ const postLikes = async () => {
+  const id = props.info.match.params.id;
+  const resp = await api.post(`/posts/${id}/likes`, { user_id: id, post_id: id });
+  console.log(resp)
+  return resp.data;
+ }
 
  const likesCount = () => {
   setLikes(likes + 1)
+  postLikes()
  }
 
  return (
@@ -32,3 +42,4 @@ const Likes = (props) => {
  )
 }
 export default Likes;
+
