@@ -1,5 +1,12 @@
-// import api from './api-helper'
+import api from './api-helper'
 
-// export const getComments = async () => {
-//  const resp = await api.get(`/posts/:post_id/comments/:id`)
-// }
+export const getComments = async (id) => {
+ const resp = await api.get(`/posts/${id}/comments`);
+ return resp.data
+}
+
+export const postComments = async (id) => {
+ const resp = await api.post(`/posts/${id}/comments`);
+ return resp.data;
+
+}
