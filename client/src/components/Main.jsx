@@ -2,7 +2,7 @@ import React, { useEffect, useState, Fragment } from 'react';
 import { Route, Switch, withRouter } from "react-router-dom";
 import { loginUser, registerUser, removeToken, verifyUser } from '../services/auth';
 import Header from './shared/Header';
-import Hero from './Hero';
+import Hero from './shared/Hero';
 import Footer from './shared/Footer';
 import { getAllPosts, postPost, putPost, deletePost } from '../services/posts';
 // import { getComments, postComments } from '../services/comments';

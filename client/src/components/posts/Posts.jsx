@@ -7,7 +7,8 @@ const Posts = (props) => {
   return str.length > 500 ? str.substring(0, 550) + '...' : str;
  }
  return (
-  <div>
+  <div className="postsContainer">
+   <h2 className="post-h2">posts</h2>
    {posts && posts.map((post, i) => (
     // <Link to={`/posts/${post.id}`}>
     <div key={i} className='posts'>

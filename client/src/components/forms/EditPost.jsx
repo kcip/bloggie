@@ -18,7 +18,8 @@ const EditPost = (props) => {
 
  const { post_title, post_content, post_photo } = post
  return (
-  <div>
+  <div className="edit">
+   <h2>edit post</h2>
    <form onSubmit={(e) => {
     e.preventDefault();
     handlePostUpdate(id, { post_title: post_title, post_photo: post_photo, post_content: post_content });
@@ -58,7 +59,7 @@ const EditPost = (props) => {
       }}
      />
     </label>
-    <button>submit</button>
+    <button className="button">submit</button>
    </form>
   </div>
  )
