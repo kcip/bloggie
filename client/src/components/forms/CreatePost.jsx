@@ -13,7 +13,7 @@ const CreatePost = (props) => {
   setText('')
  }
  return (
-  <div>
+  <div className="edit">
    <h2>Create Post</h2>
    {/* handleLogin({ username: signIn, password: pass }); */}
    <form onSubmit={(e) => {
@@ -45,7 +45,7 @@ const CreatePost = (props) => {
 
      />
     </label>
-    <button>submit</button>
+    <button className="button">submit</button>
    </form>
   </div>
  )

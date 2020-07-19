@@ -117,7 +117,7 @@
 	// font-family: 'BenchNine', sans-serif;
 	font-size: 2rem;
 	padding: 10px 0 10px 20px;
-	color: rgba(255, 0,0,0.5);
+	color: #555;
 	// @include for-sm-phone {
 	// 	font-size: 1.8rem;
 	// }
@@ -300,7 +300,12 @@
     @include flex;
 }
 
-
+.post-h2 {
+ text-align: center;
+ font-size: 3rem;
+ color: #777;
+ padding-bottom: 1rem;
+}
 // .post--btn {
 // 	color: $white;
 // 	font-family: 'Arsenal', sans-serif;
@@ -317,7 +322,14 @@
  margin: 0 auto;
 }
 
-
+.postsContainer {
+ background: #ccc;
+ padding-top: 3rem;
+ border-top-left-radius: 115px;
+ border-top-right-radius: 115px;
+ padding-bottom: 3rem;
+ margin-top: 5rem;
+}
 //Posts list styles
 .posts {
  background: #fff;
@@ -385,6 +397,7 @@
 }
 
 .post{
+ z-index: 3;
  display: grid;
  // grid-template-rows: 10rem 1fr 5rem 1fr 10rem;
  grid-template-columns: 10rem repeat(3, 1fr) 10rem;

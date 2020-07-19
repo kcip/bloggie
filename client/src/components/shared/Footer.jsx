@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
  return (
   <footer>
-   footer
+   &#9400; 2020 searchies...
   </footer>
  )
 }

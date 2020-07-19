@@ -8,7 +8,7 @@ const Signin = (props) => {
  return (
   <Fragment>
    <div className="form">
-    <p className="text">Sign in</p>
+    <h2 className="text">Sign in</h2>
     <form className='userForm' autoSave="off" onSubmit={(e) => {
      e.preventDefault();
      handleLogin({ username: signIn, password: pass });
