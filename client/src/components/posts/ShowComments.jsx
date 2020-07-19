@@ -6,17 +6,19 @@ const ShowComments = (props) => {
 
  const [comments, setComments] = useState([])
 
- useEffect(() => {
-  fetchComments()
 
- }, [comments, setComments])
+ ///////////////////////////// NEED FIXING //////////////////////
+ // useEffect(() => {
+ //  fetchComments()
+
+ // }, [comments])
 
 
- const fetchComments = async () => {
-  const resp = await api.get(`/posts/${id}/comments`);
-  const postComments = await getComments(id)
-  setComments(postComments)
- }
+ // const fetchComments = async () => {
+ //  const resp = await api.get(`/posts/${id}/comments`);
+ //  const postComments = await getComments(id)
+ //  setComments(postComments)
+ // }
 
 
 

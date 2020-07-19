@@ -17,9 +17,8 @@ const Likes = (props) => {
   const resp = await api.get(`/posts/${id}/likes`);
   const postLikes = resp.data
   console.log(postLikes)
-  postLikes.filter(like => like.post_id == id).map(filteredLikes => (
-   setLikes(parseInt(filteredLikes.post_id))
-  ))
+  const like = postLikes.filter(like => like.post_id == id)
+  setLikes(parseInt(like.length));
  }
 
  const postLikes = async () => {
@@ -36,8 +35,17 @@ const Likes = (props) => {
 
  return (
   <div className="likes">
-   <p>likes: {likes}  <FontAwesomeIcon icon={faHeart} style={likes === 0 ? { color: '#333' } : { color: 'red' }} /></p>
-   <button onClick={likesCount}>Like</button>
+   <div className="likes--button">
+    <button onClick={likesCount}>Like</button>
+   </div>
+   <div className="likes--details">
+    <div className="likes--details-side1">
+     <p>{likes}</p>
+    </div>
+    <div className="likes--details-side2">
+     <FontAwesomeIcon icon={faHeart} style={likes === 0 ? { color: '#333' } : { color: 'red' }} />
+    </div>
+   </div>
   </div>
  )
 }

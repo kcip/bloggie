@@ -17,14 +17,15 @@ const Comments = (props) => {
 
 
  return (
-  <div>
-   comments
-   <form onSubmit={(e) => {
+  <div className="comments">
+   <h3>comments</h3>
+   <form className="comments--form" onSubmit={(e) => {
     e.preventDefault()
     putComments(id, { name: name, body: comment })
    }}>
     <label>
      <input
+      placeholder="name"
       type="text"
       value={name}
       name="name"
