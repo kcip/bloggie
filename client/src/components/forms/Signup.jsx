@@ -13,8 +13,8 @@ const Signup = (props) => {
   <Fragment>
    <div className="form--container">
     <div className="form--wrapper">
-     Sign up
-   <form className='signinForm' onSubmit={(e) => {
+     <h2>Sign up</h2>
+     <form className='signinForm' onSubmit={(e) => {
       e.preventDefault()
       handleRegister({ first_name: firstName, last_name: lastName, email: email, username: username, profile_img_url: userImage, password: password })
       // history.push('/')
@@ -55,7 +55,7 @@ const Signup = (props) => {
         value={password}
         onChange={e => setPassword(e.target.value)} />
       </label>
-      <button>submit</button>
+      <button className="button">submit</button>
      </form>
     </div>
 

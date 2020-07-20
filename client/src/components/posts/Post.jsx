@@ -11,6 +11,7 @@ import ShowComments from './ShowComments';
 import Likes from './Likes'
 import './postStyles.scss'
 const Post = (props) => {
+ const { currentUser } = props
  const [post, setPost] = useState([]);
  //const [comments, setComments] = useState({})
  // const data = props.data.posts;
@@ -48,6 +49,7 @@ const Post = (props) => {
  return (
 
   <div className="postContainer">
+   {console.log(currentUser)}
    <div className="post">
     <div className="post--image">
      <img src={post_photo} alt={post_title} />
@@ -62,10 +64,10 @@ const Post = (props) => {
     <div className="post--likes">
      <Likes {...props} />
     </div>
-    <div className="post--edit">
+    {currentUser ? <div className="post--edit">
      <button onClick={() => props.handlePostDelete(post.id)}><FontAwesomeIcon icon={faTrash} /></button>
      <Link to={`/posts/${post.id}/edit`}><button><FontAwesomeIcon icon={faEdit} /></button></Link>
-    </div>
+    </div> : null}
    </div>
    <div className="post--comments">
     <Comments {...props} />
