@@ -8,28 +8,36 @@ const ShowComments = (props) => {
 
 
  ///////////////////////////// NEED FIXING //////////////////////
- // useEffect(() => {
- //  fetchComments()
+ useEffect(() => {
+  fetchComments()
 
- // }, [comments])
+ }, [])
 
 
- // const fetchComments = async () => {
- //  const resp = await api.get(`/posts/${id}/comments`);
- //  const postComments = await getComments(id)
- //  setComments(postComments)
- // }
+ const fetchComments = async () => {
+  const resp = await api.get(`/posts/${id}/comments`);
+  const postComments = await getComments(id);
+  const comment = postComments.filter(comment => comment.post_id == id)
+  setComments(comment)
+ }
 
 
 
  return (
-  <div>
-   {comments && comments.filter(comment => comment.post_id == id).map(filteredComment => (
-    <>
-     <h3>{filteredComment.name}</h3>
-     <p>{filteredComment.body}</p>
-    </>
+  <div className="comments--wrapper">
+   {/* {comments && comments.filter(comment => comment.post_id == id).map(filteredComment => ( */}
+   {comments && comments.map((comment, i) => (
+    <div className="comments--container">
+     <p className="comments--name">{comment.name}</p>
+     <p className="comments--body">{comment.body}</p>
+     <p className="comments--date">{comment.updated_at}</p>
+    </div>
    ))}
+   <>
+    {/* <h3>{filteredComment.name}</h3>
+     <p>{filteredComment.body}</p> */}
+   </>
+   {/* ))} */}
   </div>
  )
 }

@@ -594,3 +594,38 @@
    margin-right: .5rem;
   }
 }
+
+//comments
+.comments--wrapper {
+ background: #f9f9f9;
+ border-radius: 10px;
+ padding: 1rem;
+ margin: 10rem 0;
+ box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.comments--container {
+ background: #fff;
+ padding: 1rem 1rem 1rem 3rem;
+ margin: 1rem;
+}
+
+.comments {
+ &--name{
+font-size: 1.8rem;
+font-weight: bold;
+margin-left: 1rem;
+margin-bottom: .5rem;
+ }
+ &--body {
+font-size: 1.5rem;
+margin-bottom: .5rem;
+margin-left: 1rem;
+ }
+ &--date {
+font-size: 1.2rem;
+margin-left: 1rem;
+margin-bottom: .5rem;
+color: #777;
+ }
+}
