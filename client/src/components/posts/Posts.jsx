@@ -1,5 +1,7 @@
 import React from 'react'
 import { withRouter, Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
 const Posts = (props) => {
  const posts = props.data.posts;
  // https://stackoverflow.com/questions/34860277/truncate-text-in-reactjs/36670484
@@ -19,7 +21,12 @@ const Posts = (props) => {
       <h2 className="posts--title">{post.post_title}</h2>
      </div>
      <div className="post__container">
-      <p className="posts--content">{shortenText(post.post_content)}</p>
+      <p className="posts--content">
+       <FontAwesomeIcon icon={faQuoteLeft} className="quotes left" />
+       {shortenText(post.post_content)}
+       <FontAwesomeIcon icon={faQuoteRight} className="quotes right" />
+      </p>
+
      </div>
      <div className="posts--link">
       <Link to={`/posts/${post.id}`}>read more</Link>

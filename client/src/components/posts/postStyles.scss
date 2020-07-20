@@ -17,7 +17,13 @@
 	justify-content: center;
 	align-items: center;
 }
-
+.postCard--text{
+ position: absolute;
+ top: -65px;
+ left: 75%;
+ font-size: 5rem;
+ color: #777;
+}
 .post__content {
 	background: white !important;
 	height: 420px;
@@ -301,10 +307,11 @@
 }
 
 .post-h2 {
- text-align: center;
- font-size: 3rem;
+ font-size: 5rem;
  color: #777;
- padding-bottom: 1rem;
+ position: absolute;
+ top: -46px;
+ right: 75%;
 }
 // .post--btn {
 // 	color: $white;
@@ -320,6 +327,8 @@
  width: 100vw;
  max-width: 1200px;
  margin: 0 auto;
+ position: relative;
+ padding: 2rem 0;
 }
 
 .postsContainer {
@@ -328,12 +337,13 @@
  border-top-left-radius: 115px;
  border-top-right-radius: 115px;
  padding-bottom: 3rem;
- margin-top: 5rem;
+ margin-top: 8rem;
+ position: relative;
 }
 //Posts list styles
 .posts {
  background: #fff;
- padding: 2rem;
+ padding: 3rem 2rem;
  margin: 1rem;
  box-shadow: rgba(0, 0, 0, 0.45) 0px 20px 60px -30px;
  border-radius: 10px;
@@ -346,14 +356,20 @@
  @include flex;
  flex-direction: column;
   &__container {
+   background: #f9f9f9;
+   padding: 1rem;
+   border-radius: 10px;
+   box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
    @include flex;
    flex-direction: column;
   }
 
   &--image {
    border-radius: 5px;
-   width: 800px;
+   // width: 800px;
    height: 400px;
+   max-width: 90%;
+   object-fit: cover;
   }
 
   &--title {
@@ -369,7 +385,33 @@
    width: 65%;
    margin: 0 auto;
    line-height: 1.6;
-   padding: 0 1.5rem 1.5rem 1.5rem;
+   padding: 1rem;
+   text-align: justify;
+   // padding: 0 1.5rem 1.5rem 1.5rem;
+   position: relative;
+
+    &::before {
+     position: absolute;
+     bottom: -2px;
+     content: '';
+     width: 75%;
+     background: #ccc;
+     height: 2px;
+     margin: auto;
+     left: 50%;
+     transform: translateX(-50%);
+    }
+
+    &::after {
+     position: absolute;
+     top: -2px;
+     left: 50%;
+     transform: translateX(-50%);
+     content: '';
+     width: 100%;
+     height: 2px;
+     background: #ccc;
+    }
   }
 
   &--link {
@@ -380,9 +422,57 @@
      font-weight: bold;
      font-size: 1.5rem;
      color: #ccc;
+     float: right;
+     font-weight: bold;
+     font-size: 1.5rem;
+     color: #ccc;
+     border: 1px solid #ccc;
+     padding: .5rem 1rem;
+     border-radius: 20px;
+     cursor: pointer;
+      
     }
   }
+
+  &:hover {
+   animation: shake 300ms cubic-bezier(.36, .07, .19, .97) both;
+   transform: translate3d(0,0,0);
+   backface-visibility: hidden;
+   perspective: 1000px;
+  }
 }
+
+.quotes.left {
+ position: absolute;
+    left: -5px;
+    top: 15px;
+    width: .8em;
+}
+
+.quotes.right {
+ position: absolute;
+    margin-left: .5rem;
+    bottom: 15px;
+    width: .8em;
+}
+
+
+
+@keyframes shake {
+ 10%, 90% {
+   transform: translate3d(-1px, 0, 0);
+ }
+ 20%, 80% {
+  transform: translate3d(2px, 0, 0);
+ }
+ 30%, 50%, 70% {
+  transform: translate3d(-8px, 0, 0);
+ }
+ 40%, 60% {
+  transform: translate3d(4px, 0, 0);
+ }
+}
+
 
 //POST styles
 @mixin gridStyle {
@@ -397,7 +487,7 @@
 }
 
 .post{
- z-index: 3;
+ z-index: 4;
  display: grid;
  // grid-template-rows: 10rem 1fr 5rem 1fr 10rem;
  grid-template-columns: 10rem repeat(3, 1fr) 10rem;

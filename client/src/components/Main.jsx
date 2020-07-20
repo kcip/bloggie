@@ -119,7 +119,7 @@ const Main = (props) => {
      <Route exact path="/posts/:id" render={(props) => {
       const { id } = props.match.params;
       return <Post id={id} info={props} data={post}
-
+       currentUser={currentUser}
        handlePostDelete={handlePostDelete} data={post} id={id}
       />
      }} />

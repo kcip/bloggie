@@ -11,6 +11,7 @@ const PostCard = (props) => {
  console.log(postData)
  return (
   <div className="postCard">
+   <h2 className="postCard--text">top posts</h2>
    {postData && postData.slice(0, 6).map((post, i) => (
     <div className="post__content" key={i}>
      <div className="post__content--outerContainer">
