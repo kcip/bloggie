@@ -71,6 +71,9 @@ const Post = (props) => {
    </div>
    <div className="post--comments">
     <Comments {...props} />
+
+    {console.log(props)}
+
     <ShowComments {...props} />
    </div>
   </div>
