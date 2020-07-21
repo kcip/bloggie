@@ -8,7 +8,6 @@ const PostCard = (props) => {
   return str.length > 300 ? str.substring(0, 250) + '...' : str;
  }
  const postData = props.data.posts;
- console.log(postData)
  return (
   <div className="postCard">
    <h2 className="postCard--text">top posts</h2>
@@ -31,9 +30,7 @@ const PostCard = (props) => {
       </div>
       <div className="post__metatag">
        <p className="post__date">{post.created_at}</p>
-       <p className="post__comment">
-        {/* <i class="fas fa-comments"></i> */}
-      20 comments</p>
+       <p className="post__comment">20 comments</p>
       </div>
      </div>
     </div>

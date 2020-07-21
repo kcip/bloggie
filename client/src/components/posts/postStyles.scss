@@ -90,6 +90,7 @@
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
+
 .img--one {
 	background-position: center;
 }
@@ -103,14 +104,12 @@
  overflow: hidden;
 }
 
-
 .post__title {
 	font-size: 2rem;
 	padding: 10px 0 10px 20px;
 	color: #555;
 
 }
-
 
 .postcontent {
 	transform: translate3d(0,400px, 0);
@@ -229,7 +228,6 @@
 	 	background: #fff;
 	 	border: 1px solid #777;
 	 	color: #fff;
-	 	//backface-visibility: hidden;
 	 }
 
 	}
@@ -269,7 +267,6 @@
  flex-wrap: wrap;
  justify-content: center;
  align-items: center;
- //width: 100vw;
  max-width: 1200px;
  margin: 0 auto;
  position: relative;
@@ -404,8 +401,6 @@
  width: .8em;
 }
 
-
-
 @keyframes shake {
  10%, 90% {
    transform: translate3d(-1px, 0, 0);
@@ -421,16 +416,14 @@
  }
 }
 
-
 //POST styles
 @mixin gridStyle {
  grid-column: 2 / span 3;
-   justify-self: center;
+ justify-self: center;
 }
 .postContainer {
  display: flex;
  flex-direction: column;
-
 }
 
 .post{
@@ -521,11 +514,10 @@
 
 
 /////likes
-
 .post--likes {
  grid-row: 5;
-    grid-column: 1 /-1;
-    width: 100%;
+ grid-column: 1 /-1;
+ width: 100%;
 }
 
 .likes {

@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 const Posts = (props) => {
  const posts = props.data.posts;
  // https://stackoverflow.com/questions/34860277/truncate-text-in-reactjs/36670484
@@ -38,4 +38,4 @@ const Posts = (props) => {
   </div>
  )
 }
-export default Posts;
+export default withRouter(Posts);

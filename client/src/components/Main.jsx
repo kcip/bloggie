@@ -5,7 +5,6 @@ import Header from './shared/Header';
 import Hero from './shared/Hero';
 import Footer from './shared/Footer';
 import { getAllPosts, postPost, putPost, deletePost } from '../services/posts';
-// import { getComments, postComments } from '../services/comments';
 import PostCard from './posts/PostCard';
 import Posts from './posts/Posts';
 import Post from './posts/Post';
@@ -15,10 +14,7 @@ import Signup from './forms/Signup';
 import EditPost from './forms/EditPost';
 const Main = (props) => {
  const [post, setPost] = useState({})
-
  const [currentUser, setCurrentUser] = useState(null);
-
- // const [comments, setComments] = useState({})
 
  useEffect(() => {
   fetchPosts()
@@ -52,18 +48,6 @@ const Main = (props) => {
   }))
  }
 
- // //Comments
- // const fetchComments = async () => {
- //  const comments = await getComments();
- //  setComments(comments)
- // }
-
- // const putComments = async (postComment) => {
- //  const newComment = await postComments(postComment);
- //  setComments(prevComment => prevComment.comment, newComment)
-
- // }
-
  //AUTH Functions
  const handleLogin = async (userData) => {
   console.log(userData)
@@ -87,9 +71,6 @@ const Main = (props) => {
   const currentUser = await verifyUser();
   setCurrentUser(currentUser)
  }
-
-
-
 
  return (
   <Fragment>
@@ -118,36 +99,19 @@ const Main = (props) => {
 
      <Route exact path="/posts/:id" render={(props) => {
       const { id } = props.match.params;
-      return <Post id={id} info={props} data={post}
+      return <Post info={props}
        currentUser={currentUser}
        handlePostDelete={handlePostDelete} data={post} id={id}
       />
      }} />
 
-
-
      <Route exact path="/posts/:id/edit" render={(props) => {
       const { id } = props.match.params;
-      //const postItem = post.find(post => post.id === parseInt(id));
-      //console.log(postItem)
-      return <EditPost id={parseInt(id)} info={props}
+      return <EditPost info={props}
        handlePostUpdate={handlePostUpdate} data={post} id={parseInt(id)}
       />
      }} />
-     {/* <Route path='/posts/:id/edit' render={(props) => {
-      const { id } = props.match.params;
-      const postItem = post.find(post => post.id === parseInt(id));
-      return <EditPost {...props}
-       handlePostUpdate={handlePostUpdate}
-       postItem={postItem}
-       id={id} />
-     }} /> }*/}
-
     </Switch>
-
-
-
-
    </div>
    <Footer />
   </Fragment>

@@ -1,42 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import { getPost } from '../../services/posts'
 import { Link } from 'react-router-dom';
-// import api from '../../services/api-helper'
-// import { getComments, postComments } from '../../services/comments';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons'
 import Comments from '../forms/Comments';
 import ShowComments from './ShowComments';
-// import Comment from './Comment'
 import Likes from './Likes'
 import './postStyles.scss'
 const Post = (props) => {
  const { currentUser } = props
  const [post, setPost] = useState([]);
- //const [comments, setComments] = useState({})
- // const data = props.data.posts;
+
  useEffect(() => {
-
   fetchData()
-  // fetchComments()
+
  }, [])
-
- //Comments
-
- // const fetchComments = async () => {
- //  const id = props.info.match.params.id;
- //  const resp = await api.get(`/posts/${id}/comments`);
- //  const postComments = await getComments(id)
- //  console.log(postComments)
-
- // }
-
- // const putComments = async () => {
- //  const newComment = await postComments();
- //  setComments(prevComment => prevComment.comment, newComment)
- // }
-
-
 
  const fetchData = async () => {
   const id = props.info.match.params.id;
@@ -49,7 +27,6 @@ const Post = (props) => {
  return (
 
   <div className="postContainer">
-   {console.log(currentUser)}
    <div className="post">
     <div className="post--image">
      <img src={post_photo} alt={post_title} />
@@ -71,17 +48,9 @@ const Post = (props) => {
    </div>
    <div className="post--comments">
     <Comments {...props} />
-
-    {console.log(props)}
-
     <ShowComments {...props} />
    </div>
   </div>
  )
 }
 export default Post;
-
-
-{/* <Comment {...props} /> */ }
-{/* <Comments {...props} putComments={postComments} />
-   <ShowComments fetchComments={fetchComments} /> */}

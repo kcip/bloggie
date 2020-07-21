@@ -17,7 +17,8 @@ const Signup = (props) => {
      <form className='signinForm' onSubmit={(e) => {
       e.preventDefault()
       handleRegister({ first_name: firstName, last_name: lastName, email: email, username: username, profile_img_url: userImage, password: password })
-      // history.push('/')
+      //testing purposes
+      history.push('/')
      }}>
       <label>First Name:
      <input

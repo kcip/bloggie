@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { getPost } from '../../services/posts'
+import React, { useState, useEffect } from 'react';
+import { getPost } from '../../services/posts';
+import { Link } from 'react-router-dom';
 const EditPost = (props) => {
  const [post, setPost] = useState([]);
  const { handlePostUpdate, history, id } = props;
@@ -59,7 +60,12 @@ const EditPost = (props) => {
       }}
      />
     </label>
-    <button className="button">submit</button>
+    <button className="button">
+     <Link to="/">
+      submit
+     </Link>
+
+    </button>
    </form>
   </div>
  )

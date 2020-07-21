@@ -5,10 +5,8 @@ const ShowComments = (props) => {
  const id = props.info.match.params.id;
  const [comments, setComments] = useState([])
 
- ///////////////////////////// NEED FIXING //////////////////////
  useEffect(() => {
   fetchComments()
-
  }, [])
 
 
@@ -19,14 +17,11 @@ const ShowComments = (props) => {
   setComments(comment)
  }
 
-
-
  return (
   <>
 
    {comments ? comments && comments.map((comment, i) => (
     <div className="comments--wrapper">
-
      <div className="comments--container">
       <p className="comments--name">{comment.name}</p>
       <p className="comments--body">{comment.body}</p>

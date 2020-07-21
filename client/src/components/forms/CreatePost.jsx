@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-
 const CreatePost = (props) => {
  const { handlePostCreate, history } = props;
- // console.log(props)
  const [name, setName] = useState('');
  const [photo, setPhoto] = useState('');
  const [text, setText] = useState('');
@@ -15,12 +13,11 @@ const CreatePost = (props) => {
  return (
   <div className="edit">
    <h2>Create Post</h2>
-   {/* handleLogin({ username: signIn, password: pass }); */}
    <form onSubmit={(e) => {
     e.preventDefault();
     handlePostCreate({ post_title: name, post_photo: photo, post_content: text });
     clearInputs()
-    history.push('/posts')
+    history.push('/')
    }}>
     <label>Post Title:
      <input
