@@ -26,10 +26,9 @@ const Posts = (props) => {
        {shortenText(post.post_content)}
        <FontAwesomeIcon icon={faQuoteRight} className="quotes right" />
       </p>
-
      </div>
      <div className="posts--link">
-      <Link to={`/posts/${post.id}`}>read more</Link>
+      <Link to={`/posts/${post.id}`}>read more!</Link>
      </div>
 
     </div>
