@@ -19,6 +19,7 @@ const CreatePost = (props) => {
    <form onSubmit={(e) => {
     e.preventDefault();
     handlePostCreate({ post_title: name, post_photo: photo, post_content: text });
+    clearInputs()
     history.push('/posts')
    }}>
     <label>Post Title:

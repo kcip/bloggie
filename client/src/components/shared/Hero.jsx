@@ -27,7 +27,11 @@ const Hero = () => {
 
 
    </Slider> */}
-   <div className="hero--content"></div>
+   <div className="hero--content">
+    <div className="site-logo">
+     <h1>searchies</h1>
+    </div>
+   </div>
   </div>
  )
 }

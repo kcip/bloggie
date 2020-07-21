@@ -3,9 +3,7 @@ import api from '../../services/api-helper'
 import { getComments } from '../../services/comments';
 const ShowComments = (props) => {
  const id = props.info.match.params.id;
-
  const [comments, setComments] = useState([])
-
 
  ///////////////////////////// NEED FIXING //////////////////////
  useEffect(() => {
@@ -24,21 +22,21 @@ const ShowComments = (props) => {
 
 
  return (
-  <div className="comments--wrapper">
-   {/* {comments && comments.filter(comment => comment.post_id == id).map(filteredComment => ( */}
-   {comments && comments.map((comment, i) => (
-    <div className="comments--container">
-     <p className="comments--name">{comment.name}</p>
-     <p className="comments--body">{comment.body}</p>
-     <p className="comments--date">{comment.updated_at}</p>
+  <>
+
+   {comments ? comments && comments.map((comment, i) => (
+    <div className="comments--wrapper">
+
+     <div className="comments--container">
+      <p className="comments--name">{comment.name}</p>
+      <p className="comments--body">{comment.body}</p>
+      <p className="comments--date">{comment.updated_at}</p>
+     </div>
     </div>
-   ))}
-   <>
-    {/* <h3>{filteredComment.name}</h3>
-     <p>{filteredComment.body}</p> */}
-   </>
-   {/* ))} */}
-  </div>
+
+   )) : null}
+  </>
+
  )
 }
 export default ShowComments;

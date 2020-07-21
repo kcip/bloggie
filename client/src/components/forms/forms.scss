@@ -1,6 +1,6 @@
 .form {
  min-height: 100vh;
- min-width: 100vw;
+ //min-width: 100vw;
  display: flex;
  flex-direction: column;
  justify-content: center;
@@ -26,8 +26,12 @@
  align-items: center;
  justify-content: center;
  border-radius: 5px;
- box-shadow: 2px 2px 10px rgba(0,0,0,0.3)
-;
+ box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+ @media only screen and (max-width: 700px){
+  width: 80vw;
+  height: 50vh;
+  margin: 0 auto;
+ }
   label {
    position: relative;
    border-bottom: 1px solid #21A1F2;
@@ -181,6 +185,9 @@
   justify-content: center;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 20px 60px -30px;
+  @media only screen and (max-width: 700px){
+   height: auto;
+  }
 
   h2 {
    margin-top: 6rem;
