@@ -11,7 +11,7 @@ const Posts = (props) => {
  return (
   <div className="postsContainer">
    <h2 className="post-h2">posts</h2>
-   {posts.map((post, i) => (
+   {posts && posts.map((post, i) => (
     // <Link to={`/posts/${post.id}`}>
     <div key={i} className='posts'>
      <div className="posts__container">
