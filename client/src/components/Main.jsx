@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Fragment } from 'react';
-import { Route, Switch, withRouter } from "react-router-dom";
+import { Route, Switch, withRouter, Link } from "react-router-dom";
 import { loginUser, registerUser, removeToken, verifyUser } from '../services/auth';
 import Header from './shared/Header';
 import Hero from './shared/Hero';
@@ -12,6 +12,7 @@ import CreatePost from './forms/CreatePost';
 import Signin from './forms/Signin';
 import Signup from './forms/Signup';
 import EditPost from './forms/EditPost';
+import PostLink from './posts/PostLink';
 const Main = (props) => {
  const [post, setPost] = useState({})
  const [currentUser, setCurrentUser] = useState(null);
@@ -87,9 +88,13 @@ const Main = (props) => {
      <Route path="/" exact  >
       <Hero />
       <PostCard data={post} />
-      <Posts data={post} />
+      <PostLink />
+      {/* <Posts data={post} /> */}
      </Route>
 
+     <Route path="/posts" exact>
+      <Posts data={post} />
+     </Route>
      <Route path='/posts/new' exact render={(props) => (
       <CreatePost
        {...props}
@@ -112,6 +117,7 @@ const Main = (props) => {
       />
      }} />
     </Switch>
+
    </div>
    <Footer />
   </Fragment>
