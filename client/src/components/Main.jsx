@@ -92,7 +92,7 @@ const Main = (props) => {
       {/* <Posts data={post} /> */}
      </Route>
 
-     <Route path="/posts" exact>
+     <Route path="/posts" exact >
       <Posts data={post} />
      </Route>
 

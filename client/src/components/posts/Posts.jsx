@@ -1,20 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 const Posts = (props) => {
- const posts = props.data.posts;
+ // const postData = props.data.posts;
+ const [postData, setPostData] = useState([])
 
+ useEffect(() => {
+  const postData = props.data.posts;
+  setPostData(postData)
+  window.scrollTo(0, 0);
+ }, [])
  // https://stackoverflow.com/questions/34860277/truncate-text-in-reactjs/36670484
  // const shortenText = (str) => {
  //  return str.length > 500 ? str.substring(0, 550) + '...' : str;
  // }
+
+
  return (
   <div className="postsContainer">
-   {console.log(posts)}
    <h2 className="post-h2">posts</h2>
-   {posts && posts.map((post, i) => (
-    // <Link to={`/posts/${post.id}`}>
+   {postData && postData.map((post, i) => (
     <div key={i} className='posts'>
      <div className="posts__container">
       <img className="posts--image" src={post.post_photo} alt={post.post_title} />
@@ -34,8 +40,6 @@ const Posts = (props) => {
      </div>
 
     </div>
-    // </Link>
-
    ))}
   </div>
  )

@@ -24,6 +24,8 @@
 
 _**bloggie** is a Full CRUD blog app with user posts, comments & likes with a Ruby on Rails Back-End and React Front-End._
 
+[https://amazing-turing-58b7a3.netlify.app/](url)
+
 <br>
 
 ## MVP
@@ -153,4 +155,4 @@ https://drive.google.com/file/d/1AP06QmD-ukAdcnkvFWA1S4erhdoZJt1C/view?usp=shari
 
 ## Code Issues & Resolutions
 
-> Use this section to list of all major issues encountered and their resolution -- Coming soon.
+> I've been having problems getting my Posts component to render in production. It works fine in development however.The props are being passed down to the component and part of it is rendered, it just isn't rendering the data to the page. I've tried several diferent things to try to fix the error, but none of them have resolved the issue. 
