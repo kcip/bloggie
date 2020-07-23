@@ -95,6 +95,7 @@ const Main = (props) => {
      <Route path="/posts" exact>
       <Posts data={post} />
      </Route>
+
      <Route path='/posts/new' exact render={(props) => (
       <CreatePost
        {...props}
